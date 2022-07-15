@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const FavouritePage = ({ props, placeholder, data }) => {
   const { setStep } = props;
+  setStep(3);
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 

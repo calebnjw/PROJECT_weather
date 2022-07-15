@@ -5,11 +5,42 @@ import {
 import Snowflake from '../SnowFlake.gif';
 
 const LoginForm = (props) => {
-  const { setStep } = props;
+  const { step, setStep, login, setLogin } = props;
 
-  const handleLoginSubmit = () => {
-    setStep(3);
+  //initialize useState for login input 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleLoginSubmit = (event) => {
+    setStep(2);
+
+    if ((email, password)){
+      console.log('email: ', email, 'password: ', [password])
+
+      const loginObj = {
+        email,
+        password,
+      }
+      console.log('This is login object: ', loginObj);
+      setLogin(loginObj);
+      //input fields are reset
+      setEmail('');
+      setPassword('');
+      event.preventDefault()
+    } else {
+      alert('Email/Password entered incorrectly');
+    } 
   };
+
+  //get login input values
+  const emailInput = (event) => {
+    setEmail(event.target.value);
+  }
+
+  const passwordInput = (event) => {
+    setPassword(event.target.value);
+  }
+
 
   const handleSignUpSubmit = () => {
     setStep(2);
@@ -19,7 +50,7 @@ const LoginForm = (props) => {
     <>
       <div className="main-login-container">
         {/* login form */}
-        <Grid>
+        <Grid stackable>
             <Grid.Column mobile={16} tablet={8} computer={4} largeScreen={2} widescreen={1}>
                 <div className="to-signup-div">
                   <img
@@ -43,11 +74,11 @@ const LoginForm = (props) => {
                   <Form>
                     <Form.Field>
                       <label>Email</label>
-                      <input placeholder="First Name" />
+                      <input placeholder="Email" onChange={emailInput}/>
                     </Form.Field>
                     <Form.Field>
                       <label>Password</label>
-                      <input placeholder="Last Name" />
+                      <input placeholder="Password" onChange={passwordInput}/>
                     </Form.Field>
                     <div className="front-page-button">
                       <Button

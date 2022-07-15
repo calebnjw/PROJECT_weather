@@ -12,6 +12,7 @@ const LoginForm = (props) => {
   const [password, setPassword] = useState('')
 
   const handleLoginSubmit = (event) => {
+    //change this to 3 later on for favourite page
     setStep(2);
 
     if ((email, password)){

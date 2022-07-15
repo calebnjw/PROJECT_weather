@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Button, Form, Segment, Grid, GridColumn,
+  Button, Form, Segment, Grid
 } from 'semantic-ui-react';
 import Snowflake from '../SnowFlake.gif';
 
@@ -19,10 +19,8 @@ const LoginForm = (props) => {
     <>
       <div className="main-login-container">
         {/* login form */}
-        <Grid stackable columns={2} divided>
-          <Grid.Row>
-            <Grid.Column>
-              <Segment>
+        <Grid>
+            <Grid.Column mobile={16} tablet={8} computer={4} largeScreen={2} widescreen={1}>
                 <div className="to-signup-div">
                   <img
                     className="weather-logo"
@@ -39,10 +37,8 @@ const LoginForm = (props) => {
                     Sign Up
                   </Button>
                 </div>
-              </Segment>
             </Grid.Column>
-            <Grid.Column>
-              <Segment>
+            <Grid.Column mobile={16} tablet={8} computer={4} largeScreen={2} widescreen={1}>
                 <div className="login-form-div">
                   <Form>
                     <Form.Field>
@@ -64,9 +60,7 @@ const LoginForm = (props) => {
                     </div>
                   </Form>
                 </div>
-              </Segment>
             </Grid.Column>
-          </Grid.Row>
         </Grid>
       </div>
     </>

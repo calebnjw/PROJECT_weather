@@ -80,6 +80,8 @@ hr {
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  border-color: teal;
+  border-width: 1px;
 
   height: calc((100vh - 10rem) / 2);
   width: 100vw;
@@ -101,15 +103,6 @@ hr {
   margin-bottom: 0.2rem;
 }
 
-<<<<<<< HEAD
-.ui.message{
-    padding: 7px;
-    border-color: teal;
-=======
-.ui.message {
-  padding: 7px;
->>>>>>> 738da4b9f92079c17b9e80bf08c632cb47ca178a
-}
 
 .message-bubble > .label {
   align-self: start;
@@ -127,10 +120,10 @@ hr {
   justify-content: space-between;
 }
 
-.ui.input {
-    width: 550px;
-    height: 40px;
+.input-box {
+    width: 570px;
 }
+
 
 .daily-weather-item {
   margin-top: 2rem;
